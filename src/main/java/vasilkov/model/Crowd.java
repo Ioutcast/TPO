@@ -8,9 +8,6 @@ public class Crowd {
 
     private int volume=50;
 
-    public Crowd() {
-    }
-
     @SneakyThrows
     public void exult(){
         if(this.volume > 90) throw new Exception("Толпа не может говорить громче!");

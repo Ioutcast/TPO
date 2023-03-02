@@ -1,11 +1,7 @@
 package vasilkov;
 
-import static java.lang.Float.NaN;
+import vasilkov.model.*;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
