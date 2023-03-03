@@ -16,10 +16,9 @@ public class ArturTest {
     }
 
     @Test
-    @DisplayName("moveToConstruction test")
+    @DisplayName("moveToConstruction with same x,y as Artur test")
     public void alreadyInConstruction(){
         construction = new Construction();
-        artur.moveToConstruction(construction);
         Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(construction));
         assertEquals("Артур уже в этом здании!",exception.getMessage());
     }

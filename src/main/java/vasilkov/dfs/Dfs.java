@@ -32,17 +32,4 @@ class Dfs {
         }
     }
 
-    public static void main(String[] args) {
-
-        Dfs g = new Dfs(7);
-
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 3);
-
-        System.out.println("Following is Depth First Traversal");
-
-        g.DFS(0);
-    }
 }
