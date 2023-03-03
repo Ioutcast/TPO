@@ -48,6 +48,6 @@ public class CrowdTest {
     public void crowdListenMinVolumeError(){
         crowd.listen();
         Throwable exception = assertThrows(Exception.class, ()->crowd.listen());
-        assertEquals("Толпа не может говорить тише!",exception.getMessage());
+        assertEquals("Толпа и так слушает! Она не может говорить тише!",exception.getMessage());
     }
 }

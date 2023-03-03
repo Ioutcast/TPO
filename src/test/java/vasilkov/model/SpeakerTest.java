@@ -17,13 +17,19 @@ public class SpeakerTest {
         speaker = new Speaker("speaker");
     }
 
+//
+//    @Test
+//    @DisplayName("Check speaker w/o (construction and crowd) ")
+//    public void speakerWoConstruction(){
+//        Throwable exception = assertThrows(Exception.class, ()->speaker.speaks_to_the_crowd());
+//        assertEquals("Cпикер должен вещать из здания!",exception.getMessage());
+//    }
+
+
     @Test
     @DisplayName("Check speaker w/o crowd")
     public void speakerWoCrowd(){
-        construction = new Construction(speaker);
-        speaker.addSpeakerCrowd(new Human("a"));
-        System.out.println(inConstrPeople.contains(speaker));
-        if(!inConstrPeople.contains(speaker)) System.out.println("aaaaaa");
+        Construction construction = new Construction(speaker);
         Throwable exception = assertThrows(Exception.class, ()->speaker.speaks_to_the_crowd());
         assertEquals("Не к кому обращаться!",exception.getMessage());
     }
