@@ -35,7 +35,7 @@ public class Story {
 
     @SneakyThrows
     public void startAction() {
-        if (!isStorySet) throw new IllegalStateException("Story must be set first");
+        if (!isStorySet) throw new IllegalStateException("Все истории с чего-то начинаются");
     }
 
 

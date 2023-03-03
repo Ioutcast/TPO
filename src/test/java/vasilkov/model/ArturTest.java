@@ -13,19 +13,20 @@ public class ArturTest {
     @BeforeEach
     public void init(){
         artur = new Artur("Atrur",10,10);
-        construction = new Construction();
     }
 
-//    @Test
-//    @DisplayName("checkNullConstruction test")
-//    public void checkNullConstruction(){
-//        Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(null));
-//        assertEquals("Argument for @NotNull parameter 'construction' of vasilkov/model/Artur.moveToConstruction must not be null",exception.getMessage());
-//    }
     @Test
-    @DisplayName("alreadyInConstruction test")
+    @DisplayName("moveToConstruction test")
     public void alreadyInConstruction(){
+        construction = new Construction();
         artur.moveToConstruction(construction);
+        Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(construction));
+        assertEquals("Артур уже в этом здании!",exception.getMessage());
+    }
+    @Test
+    @DisplayName("spawnArturInConstruction test")
+    public void spawnArturInConstruction(){
+        construction = new Construction(10,10,artur);
         Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(construction));
         assertEquals("Артур уже в этом здании!",exception.getMessage());
     }

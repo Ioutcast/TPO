@@ -20,7 +20,7 @@ public class StoryTest {
     @DisplayName("Check Story setup")
     public void testStorySetup() {
         Throwable exception = assertThrows(Exception.class, ()->story.startAction());
-        assertEquals("Story must be set first",exception.getMessage());
+        assertEquals("Все истории с чего-то начинаются!",exception.getMessage());
     }
     @Test
     @DisplayName("Check Story Speaker")
