@@ -3,21 +3,39 @@ package vasilkov.model;
 
 import lombok.*;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
+
 @Data
-public class Crowd {
+@NoArgsConstructor
+public class Crowd{
 
     private int volume=50;
 
+    private Set<Human> peopleInCrowd = new HashSet<>();
+
+    public Crowd (HashSet<Human> list){
+        this.peopleInCrowd = list;
+    }
+
     @SneakyThrows
     public void exult(){
-        if(this.volume > 90) throw new Exception("Толпа не может говорить громче!");
-        volume +=10;
+        if(this.peopleInCrowd.isEmpty()) throw new Exception("В толпе ноль человек!");
+        if(this.volume >= 110) throw new Exception("Толпа не может говорить громче!");
+        volume +=30;
     }
 
     @SneakyThrows
     public void listen(){
-        if(this.volume < 30) throw new Exception("Толпа не может говорить тише!");
-        volume -=30;
+        if(this.peopleInCrowd.isEmpty()) throw new Exception("В толпе ноль человек!");
+        if(this.volume <= 30) throw new Exception("Толпа не может говорить тише!");
+        volume -=20;
+    }
+
+    public void addHuman(Human human){
+        peopleInCrowd.add(human);
     }
 
 }
