@@ -11,7 +11,7 @@ public class Arctan {
 
         for (int i = 1; i < n; i++) {
 
-            if (Double.isNaN(result)){
+            if (Double.isNaN(result)) {
                 return Double.NaN;
             }
 

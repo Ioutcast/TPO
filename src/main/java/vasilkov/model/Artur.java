@@ -1,6 +1,9 @@
 package vasilkov.model;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.SneakyThrows;
+import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 
 import static vasilkov.model.Construction.inConstrPeople;
@@ -8,16 +11,16 @@ import static vasilkov.model.Construction.inConstrPeople;
 @Data
 @ToString
 @EqualsAndHashCode(callSuper = true)
-public class Artur extends Human{
+public class Artur extends Human {
 
     private int x;
 
     private int y;
 
-    public Artur(String name,int x,int y) {
+    public Artur(String name, int x, int y) {
         super(name);
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 
     @SneakyThrows
@@ -31,18 +34,18 @@ public class Artur extends Human{
             return;
         }
 
-        if(constructionX == getX()) {
-            setY(constructionY < getY() ? getY()-1 : getY()+1);
+        if (constructionX == getX()) {
+            setY(constructionY < getY() ? getY() - 1 : getY() + 1);
             return;
         }
 
         if (constructionY == getY()) {
-            setX(constructionX < getX() ? getX()-1 : getX()+1);
+            setX(constructionX < getX() ? getX() - 1 : getX() + 1);
             return;
         }
 
-        setY(constructionY < getY() ? getY()-1 : getY()+1);
-        setX(constructionX < getX() ? getX()-1 : getX()+1);
+        setY(constructionY < getY() ? getY() - 1 : getY() + 1);
+        setX(constructionX < getX() ? getX() - 1 : getX() + 1);
     }
 
 }

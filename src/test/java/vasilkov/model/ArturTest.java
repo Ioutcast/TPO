@@ -10,24 +10,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ArturTest {
     Artur artur;
     Construction construction;
+
     @BeforeEach
-    public void init(){
-        artur = new Artur("Atrur",10,10);
+    public void init() {
+        artur = new Artur("Atrur", 10, 10);
     }
 
     @Test
     @DisplayName("moveToConstruction with same x,y as Artur test")
-    public void alreadyInConstruction(){
+    public void alreadyInConstruction() {
         construction = new Construction();
-        Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(construction));
-        assertEquals("Артур уже в этом здании!",exception.getMessage());
+        Throwable exception = assertThrows(Exception.class, () -> artur.moveToConstruction(construction));
+        assertEquals("Артур уже в этом здании!", exception.getMessage());
     }
+
     @Test
     @DisplayName("spawnArturInConstruction test")
-    public void spawnArturInConstruction(){
-        construction = new Construction(10,10,artur);
-        Throwable exception = assertThrows(Exception.class, ()->artur.moveToConstruction(construction));
-        assertEquals("Артур уже в этом здании!",exception.getMessage());
+    public void spawnArturInConstruction() {
+        construction = new Construction(10, 10, artur);
+        Throwable exception = assertThrows(Exception.class, () -> artur.moveToConstruction(construction));
+        assertEquals("Артур уже в этом здании!", exception.getMessage());
     }
 
 }
