@@ -17,6 +17,14 @@ public class SpeakerTest {
         speaker = new Speaker("speaker");
     }
 
+
+    @Test
+    @DisplayName("Check speaker w/o (construction and crowd) ")
+    public void speakerWoConstruction(){
+        speaker.addSpeakerCrowd(new Human("asd"));
+        Throwable exception = assertThrows(Exception.class, ()->speaker.speaks_to_the_crowd());
+        assertEquals("Cпикер должен вещать из здания!",exception.getMessage());
+    }
     @Test
     @DisplayName("Check speaker w/o crowd")
     public void speakerWoCrowd(){

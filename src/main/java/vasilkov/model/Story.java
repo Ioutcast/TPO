@@ -4,6 +4,7 @@ package vasilkov.model;
 import lombok.Data;
 import lombok.SneakyThrows;
 
+import static vasilkov.model.Construction.inConstrPeople;
 import static vasilkov.model.Crowd.newHashSet;
 
 
